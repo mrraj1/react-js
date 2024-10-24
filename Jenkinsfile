@@ -5,16 +5,32 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 echo 'Cloning Github Repository...'
-                git branch: 'main', url: 'https://gitlab.com/jnbhol101/react-js.git'  
+                git branch: 'main', url: 'https://github.com/mrraj1/react-js.git'
+            }
+        }
+        stage('Check Node and npm') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
 
+
+        stage('Reinstall npm') {
+            steps {
+                sh 'npm install -g npm@latest'
+            }
+        }
+        stage('Clean and Install') {
+            steps {
+                sh 'rm -rf node_modules'
+                sh 'npm install --verbose'
+            }
+        }
         stage('Build Application') {
             steps {
-                echo 'Building ReactJS Application...'
-                sh 'npm install'
-                sh 'npm run build'  
+                sh 'npm run build'
             }
         }
 
