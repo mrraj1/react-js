@@ -6,7 +6,7 @@
     "express": "^4.17.1"
   },
   "scripts": {
-    "build": "echo 'No build step defined'", // Replace with your actual build command if needed
-    "start": "node app.js" // Optional: define a start script
+    "build": "echo 'No build step defined'",
+    "start": "node app.js"
   }
 }
