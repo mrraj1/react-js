@@ -25,8 +25,8 @@ pipeline {
         stage('Build Application') {
             steps {
                 echo 'Building ReactJS Application...'
-                sh 'npm install --verbose' // Add verbose for more info
-                sh 'npm run build --verbose'  
+                sh 'npm install'
+                sh 'npm run build'  
             }
         }
 
