@@ -1,9 +1,12 @@
 {
-    "name": "node-app",
-    "version": "1.0.0",
-    "main": "app.js",
-    "dependencies": {
-      "express": "^4.17.1"
-    }
+  "name": "node-app",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "build": "echo 'No build step defined'", // Replace with your actual build command if needed
+    "start": "node app.js" // Optional: define a start script
   }
-  
+}
