@@ -4,7 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
-    "some-other-dependency": "^1.0.0" 
+    
   },
   "scripts": {
     "build": "echo 'No build step defined'",
