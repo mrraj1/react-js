@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                echo 'Cloning GitLab Repository...'
+                echo 'Cloning Github Repository...'
                 git branch: 'main', url: 'https://gitlab.com/jnbhol101/react-js.git'  
             }
         }
