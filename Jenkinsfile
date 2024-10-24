@@ -15,22 +15,18 @@ pipeline {
             }
         }
 
-
-
-        stage('Reinstall npm') {
+        stage('Clean Build Directory') {
             steps {
-                sh 'npm install -g npm@latest'
+                echo 'Cleaning previous build files...'
+                sh 'rm -rf build' // Clean up old build directory
             }
         }
-        stage('Clean and Install') {
-            steps {
-                sh 'rm -rf node_modules'
-                sh 'npm install --verbose'
-            }
-        }
+
         stage('Build Application') {
             steps {
-                sh 'npm run build'
+                echo 'Building ReactJS Application...'
+                sh 'npm install --verbose' // Add verbose for more info
+                sh 'npm run build --verbose'  
             }
         }
 
@@ -46,7 +42,7 @@ pipeline {
             steps {
                 echo 'Restarting Apache server...'
                 sh 'sudo systemctl restart apache2'  
-        }
+            }
         }
 
         stage('Hello') {
@@ -54,6 +50,5 @@ pipeline {
                 echo 'Hello World from Node.js Slave'
             }
         }
-    
-    } 
+    }
 }
