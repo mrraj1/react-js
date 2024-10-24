@@ -13,6 +13,7 @@ pipeline {
         stage('Build Application') {
             steps {
                 echo 'Building ReactJS Application...'
+                sh 'npm install'
                 sh 'npm run build'  
             }
         }
